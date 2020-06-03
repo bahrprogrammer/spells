@@ -1,0 +1,37 @@
+<div class="d-flex">
+  <div class="table table-sm mh-100 p-3 w-50">
+    <table class="table table-striped">
+      <thead class="sticky-top">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Level</th>
+          <th scope="col">School</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let spell of spells" (click)="select(spell)">
+          <th scope="row">{{spell.id}}</th>
+          <td>{{spell.name}}</td>
+          <td>{{spell.level}}</td>
+          <td>{{spell.school}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="selectedSpell" class="w-50 p-3">
+    <div class="card">
+      <div class="card-header">
+        <h6>{{selectedSpell.name}}</h6>
+        <span>Level {{selectedSpell.level}} - <em>({{selectedSpell.school}})</em></span>
+        <div class="card-body">
+          <span>Casting Time: {{selectedSpell.castingTing}}</span><br>
+          <span>Range: {{selectedSpell.range}}</span><br>
+          <span>Components: {{selectedSpell.components}}</span><br>
+          <span>Duration: {{selectedSpell.duration}}</span><br><br>
+          <p>Description:  {{selectedSpell.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

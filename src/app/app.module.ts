@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './data/in-memory-data.service';
 
+import { SpellsModule } from './spells/spells.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +19,8 @@ import { InMemoryDataService } from './data/in-memory-data.service';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    SpellsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
