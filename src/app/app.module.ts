@@ -8,6 +8,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './data/in-memory-data.service';
 
 import { SpellsModule } from './spells/spells.module';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [

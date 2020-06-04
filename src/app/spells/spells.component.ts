@@ -11,6 +11,7 @@ export class SpellsComponent implements OnInit {
   selectedSpell: ISpell;
   spells: ISpell[];
 
+
   constructor(private spellService: SpellsService) { }
 
   ngOnInit(): void {
@@ -21,6 +22,12 @@ export class SpellsComponent implements OnInit {
     this.spellService.getSpells().subscribe({
       next: (data) => (this.spells = data)
     });
+  }
+
+  onSubmit(): void {
+    const index = this.spells.indexOf(this.selectedSpell);
+    this.spells.splice(index, 1, this.selectedSpell);
+    console.log(this.spells);
   }
 
   select(spell: ISpell): void {

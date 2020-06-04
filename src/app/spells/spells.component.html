@@ -25,12 +25,37 @@
         <h6>{{selectedSpell.name}}</h6>
         <span>Level {{selectedSpell.level}} - <em>({{selectedSpell.school}})</em></span>
         <div class="card-body">
-          <span>Casting Time: {{selectedSpell.castingTing}}</span><br>
-          <span>Range: {{selectedSpell.range}}</span><br>
-          <span>Components: {{selectedSpell.components}}</span><br>
-          <span>Duration: {{selectedSpell.duration}}</span><br><br>
-          <p>Description:  {{selectedSpell.description}}</p>
+          <form (ngSubmit)="onSubmit()">
+            <span>Casting Time: {{selectedSpell.castingTime}}</span><br>
+            <span>Range: {{selectedSpell.range}}</span><br>
+            <span>Components: {{selectedSpell.components}}</span><br>
+            <span>Duration: {{selectedSpell.duration}}</span><br><br>
+            <p>Description:</p>
+            <div innerHtml="{{selectedSpell.description}}"></div>
+            <h6>Description Edit</h6>
+            <editor apiKey="d6wotuq1x999s7bqtffo0gueakoue5bcxeu4u6xw0g6ydmzg"
+              name="description"
+              [(ngModel)]="selectedSpell.description"
+              [init]="{
+                height: 300,
+                menubar: false,
+                plugins: [
+                  'advlist autolink lists link image charmap print',
+                  'preview anchor searchreplace visualblocks code',
+                  'fullscreen insertdatetime media table paste',
+                  'help wordcount'
+                ],
+                toolbar:
+                  'undo redo | formatselect | bold italic | \
+                  alignleft aligncenter alignright alignjustify | \
+                  bullist numlist outdent indent | help'
+              }"
+            >
+            </editor>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
         </div>
+        <pre>{{selectedSpell | json}}</pre>
       </div>
     </div>
   </div>
