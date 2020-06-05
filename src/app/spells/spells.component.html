@@ -1,25 +1,27 @@
-<div class="d-flex">
-  <div class="table table-sm mh-100 p-3 w-50">
-    <table class="table table-striped">
-      <thead class="sticky-top">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Level</th>
-          <th scope="col">School</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let spell of spells" (click)="select(spell)">
-          <th scope="row">{{spell.id}}</th>
-          <td>{{spell.name}}</td>
-          <td>{{spell.level}}</td>
-          <td>{{spell.school}}</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="d-flex vh-100">
+  <div class="flex-wrapper">
+    <div class="table table-sm p-3">
+      <table class="table table-striped">
+        <thead class="sticky-top">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Level</th>
+            <th scope="col">School</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let spell of spells" (click)="select(spell)">
+            <th scope="row">{{spell.id}}</th>
+            <td>{{spell.name}}</td>
+            <td>{{spell.level}}</td>
+            <td>{{spell.school}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div *ngIf="selectedSpell" class="w-50 p-3">
+  <div *ngIf="selectedSpell" class="flex-wrapper w-50 p-3">
     <div class="card">
       <div class="card-header">
         <h6>{{selectedSpell.name}}</h6>
@@ -52,10 +54,10 @@
               }"
             >
             </editor>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success">Update</button>
           </form>
         </div>
-        <pre>{{selectedSpell | json}}</pre>
+        <pre>{{spells | json}}</pre>
       </div>
     </div>
   </div>
