@@ -1,0 +1,22 @@
+<div class="d-flex vh-100">
+  <div class="flex-wrapper">
+    <div *ngIf="characterClasses" class="table table-sm p-3">
+      <table class="table table-striped">
+        <thead class="sticky-top">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Full Caster</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cc of characterClasses">
+            <th scope="row">{{cc.id}}</th>
+            <td>{{cc.name}}</td>
+            <td>{{cc.fullSpellCaster}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
