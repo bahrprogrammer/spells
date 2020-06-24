@@ -2,54 +2,63 @@
   {
      "id":0,
      "name":"All Spells",
+     "description": "<p>A list of every spell in this app.</p>",
      "fullSpellCaster":true,
      "spells":[]
   },
   {
      "id":1,
      "name":"Bard",
+     "description": "<p>Humming as she traces her fingers over an ancient monument in a long-forgotten ruin, a half-elf in rugged leathers finds knowledge springing into her mind, conjured forth by the magic of her song—knowledge of the people who constructed the monument and the mythic saga it depicts.</p><p>A stern human warrior bangs his sword rhythmically against his scale mail, setting the tempo for his war chant and exhorting his companions to bravery and heroism. The magic of his song fortifies and emboldens them.</p><p>Laughing as she tunes her cittern, a gnome weaves her subtle magic over the assembled nobles, ensuring that her companions’ words will be well received.</p><p>Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds.</p>",
      "fullSpellCaster":true,
      "spells":[]
   },
   {
      "id":2,
      "name":"Cleric",
+     "description": "<p>Cleric</p>",
      "fullSpellCaster":true,
      "spells":[]
   },
   {
      "id":3,
      "name":"Druid",
+     "description": "<p>Druid</p>",
      "fullSpellCaster":true,
      "spells":[]
   },
   {
      "id":4,
      "name":"Paladin",
+     "description": "<p>Paladin</p>",
      "fullSpellCaster":false,
      "spells":[]
   },
   {
      "id":5,
      "name":"Ranger",
+     "description": "<p>Ranger</p>",
      "fullSpellCaster":false,
      "spells":[]
   },
   {
      "id":6,
      "name":"Sorcerer",
+     "description": "<p>Sorcerer</p>",
      "fullSpellCaster":true,
      "spells":[]
   },
   {
      "id":7,
      "name":"Warlock",
+     "description": "<p>Warlock</p>",
      "fullSpellCaster":true,
      "spells":[]
   },
   {
      "id":8,
      "name":"Wizard",
+     "description": "<p>Wizard</p>",
      "fullSpellCaster":true,
      "spells":[]
   }

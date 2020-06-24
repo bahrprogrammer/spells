@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { SharedModule } from '../shared.module';
 import { CharacterClassesComponent } from './character-classes.component';
 
 
 @NgModule({
-  declarations: [CharacterClassesComponent],
+  declarations: [
+    CharacterClassesComponent
+  ],
   imports: [
     CommonModule,
-    FormsModule
+    SharedModule
   ]
 })
 export class CharacterClassesModule { }

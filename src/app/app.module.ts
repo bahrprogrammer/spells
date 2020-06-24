@@ -11,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { SpellsModule } from './spells/spells.module';
 import { CharacterClassesModule } from './character-classes/character-classes.module';
+import { SharedModule } from './shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CharacterClassesModule } from './character-classes/character-classes.mo
       InMemoryDataService, { dataEncapsulation: false }
     ),
     CharacterClassesModule,
-    SpellsModule
+    SharedModule,
+    SpellsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

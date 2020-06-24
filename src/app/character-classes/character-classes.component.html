@@ -1,22 +1,22 @@
-<div class="d-flex vh-100">
-  <div class="flex-wrapper">
-    <div *ngIf="characterClasses" class="table table-sm p-3">
-      <table class="table table-striped">
-        <thead class="sticky-top">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Full Caster</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let cc of characterClasses">
-            <th scope="row">{{cc.id}}</th>
-            <td>{{cc.name}}</td>
-            <td>{{cc.fullSpellCaster}}</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="container d-flex mt-2 flex-wrap vw-100">
+  <div *ngFor="let cc of characterClasses" class="mb-2 col-12 col-md-4">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">{{cc.name}}</h5>
+      </div>
+      <div class="card-body" innerHtml="{{cc.description}}"></div>
+      <div class="card-footer">
+        <small>
+          <span *ngIf="cc.fullSpellCaster">
+            <fa-icon [icon]="faFull"></fa-icon>
+            Full Caster
+          </span>
+          <span *ngIf="!cc.fullSpellCaster">
+            <fa-icon [icon]="faHalf"></fa-icon>
+            Half Caster
+          </span>
+        </small>
+      </div>
     </div>
   </div>
 </div>

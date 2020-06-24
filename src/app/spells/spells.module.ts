@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EditorModule } from '@tinymce/tinymce-angular';
-import { FormsModule } from '@angular/forms';
 import { SpellsComponent } from './spells.component';
+import { SharedModule } from '../shared.module';
 
 
 
@@ -10,8 +9,7 @@ import { SpellsComponent } from './spells.component';
   declarations: [SpellsComponent],
   imports: [
     CommonModule,
-    EditorModule,
-    FormsModule
+    SharedModule
   ]
 })
 export class SpellsModule { }
