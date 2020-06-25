@@ -11,7 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { SpellsModule } from './spells/spells.module';
 import { CharacterClassesModule } from './character-classes/character-classes.module';
-import { SharedModule } from './shared.module';
+import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({

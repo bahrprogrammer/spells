@@ -3,7 +3,6 @@ import { faThermometerFull, faThermometerHalf } from '@fortawesome/free-solid-sv
 
 import { CharacterClass } from '../models/CharacterClass';
 import { CharacterClassesService } from './character-classes.service';
-import { TruncateDescriptionPipe } from '../pipes/truncate-description.pipe';
 
 @Component({
   selector: 'app-character-classes',

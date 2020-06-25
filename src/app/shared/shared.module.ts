@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
-import { TruncateDescriptionPipe } from './pipes/truncate-description.pipe';
 
 
 @NgModule({
-  declarations: [
-    TruncateDescriptionPipe
-  ],
+  declarations: [],
   imports: [
     CommonModule
   ],
