@@ -2,20 +2,20 @@
   <div *ngFor="let cc of characterClasses" class="mb-2 col-12 col-md-4">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">{{cc.name}}</h5>
+        <h4 class="card-title">{{cc.name}}</h4>
       </div>
-      <div class="card-body" innerHtml="{{cc.description}}"></div>
+      <div class="card-body" innerHtml="{{ cc.description | firstParagraphTruncated }}"></div>
       <div class="card-footer">
-        <small>
+        <div *ngIf="cc.id !== 0" class="float-right">
           <span *ngIf="cc.fullSpellCaster">
             <fa-icon [icon]="faFull"></fa-icon>
             Full Caster
           </span>
           <span *ngIf="!cc.fullSpellCaster">
-            <fa-icon [icon]="faHalf"></fa-icon>
-            Half Caster
+            <fa-icon [icon]="faPartial"></fa-icon>
+            Partial Caster
           </span>
-        </small>
+        </div>
       </div>
     </div>
   </div>

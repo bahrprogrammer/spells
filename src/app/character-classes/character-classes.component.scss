@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+h4 {
+  font-family: Lemon;
+  font-weight: 550;
+}
+
+.card {
+  border-color: $border;
+}
+
+.card-body {
+  min-height: 11em;
+  background-color: #faeed3;
+  font-weight: 500;
+  color: $dark;
+}
+
+.card-header {
+  background-color: $background-emphasis;
+  color: $dark;
+}
+
+.card-footer {
+  background-color: $background-emphasis;
+  color: $dark;
+  font-weight: 500;
+  min-height: 3em;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faThermometerFull, faThermometerHalf } from '@fortawesome/free-solid-svg-icons';
+import { faThermometerEmpty, faThermometerFull, faThermometerHalf } from '@fortawesome/free-solid-svg-icons';
 
 import { CharacterClass } from '../models/CharacterClass';
 import { CharacterClassesService } from './character-classes.service';
@@ -12,7 +12,7 @@ import { CharacterClassesService } from './character-classes.service';
 export class CharacterClassesComponent implements OnInit {
   characterClasses: CharacterClass[] = [];
   faFull = faThermometerFull;
-  faHalf = faThermometerHalf;
+  faPartial = faThermometerEmpty;
 
   constructor(private service: CharacterClassesService) { }
 
