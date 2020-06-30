@@ -15,4 +15,11 @@ export class CharacterClassesService {
     const url = 'api/characterClasses';
     return this.http.get<CharacterClass[]>(url);
   }
+
+  getCharacterClassById(id: string): Observable<CharacterClass> {
+    const url = `api/characterClasses/${id}`;
+    const characterClass = this.http.get<CharacterClass>(url);
+    console.log(characterClass);
+    return this.http.get<CharacterClass>(url);
+  }
 }
