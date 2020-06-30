@@ -18,12 +18,10 @@ export class CharacterClassEditComponent implements OnInit {
   ngOnInit(): void {
     console.log('before' + this.route.snapshot.paramMap.get('id'));
     this.getCharacterClass();
-    console.log(this.characterClass);
   }
 
   getCharacterClass(): void{
     const id = this.route.snapshot.paramMap.get('id');
-    console.log('after ' + id);
     this.service.getCharacterClassById(id).subscribe({
       next: (data) => (this.characterClass = data)
     });

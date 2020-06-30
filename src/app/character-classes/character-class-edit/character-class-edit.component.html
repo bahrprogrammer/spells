@@ -1,2 +1,4 @@
-<h3>{{characterClass.name}}</h3>
-<div innerHtml="{{characterClass.description}}"></div>
+<div *ngIf="characterClass">
+  <h3>{{characterClass.name}}</h3>
+  <div innerHtml="{{characterClass.description}}"></div>
+</div>
