@@ -25,13 +25,13 @@ export class CharacterClassEditComponent implements OnInit {
   eighthLevelSpells: ISpell[] = [];
   ninthLevelSpells: ISpell[] = [];
 
+  jsonClass: string;
+
   constructor(private route: ActivatedRoute, private service: CharacterClassesService) { }
 
   ngOnInit(): void {
-    console.log('before' + this.route.snapshot.paramMap.get('id'));
     this.getCharacterClass();
     this.getAllSpells();
-    console.log('test');
   }
 
   getCharacterClass(): void{
@@ -41,10 +41,11 @@ export class CharacterClassEditComponent implements OnInit {
     });
   }
 
-  getAllSpells(): void{
+  getAllSpells(): void {
     this.service.getAllSpells().subscribe({
       next: (data) => {
-        (this.allspells = data);
+        this.allspells = data;
+        this.getClassSpells();
         this.cantrips = this.allspells.filter((s) => s.level === 0);
         this.firstLevelSpells = this.allspells.filter((s) => s.level === 1);
         this.secondLevelSpells = this.allspells.filter((s) => s.level === 2);
@@ -57,5 +58,75 @@ export class CharacterClassEditComponent implements OnInit {
         this.ninthLevelSpells = this.allspells.filter((s) => s.level === 9);
       }
     });
+  }
+
+  getClassSpells(): void {
+    this.allspells.forEach(s => {
+      if (this.characterClass.spells.find(x => x.id === s.id)){
+        s.selected = true;
+      } else {
+        s.selected = false;
+      }
+    });
+  }
+
+  updateCharacterClass(): void {
+    this.characterClass.spells = this.getSelectedSpells();
+    this.jsonClass = JSON.stringify(this.characterClass);
+  }
+
+  getSelectedSpells(): ISpell[] {
+    const selected: ISpell[] = [];
+    this.cantrips.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.firstLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.secondLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.thirdLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.fourthLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.fifthLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.sixthLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.seventhLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.eighthLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    this.ninthLevelSpells.forEach(s => {
+      if (s.selected) {
+        selected.push(s);
+      }
+    });
+    return selected;
   }
 }

@@ -21,7 +21,10 @@
           <div class="card-body">
             <ul class="list-unstyled">
               <li *ngFor="let spell of cantrips">
-                <span>{{spell.name}}</span>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                </div>
               </li>
             </ul>
           </div>
@@ -39,7 +42,10 @@
           <div class="card-body">
             <ul class="list-unstyled">
               <li *ngFor="let spell of firstLevelSpells">
-                <span>{{spell.name}}</span>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                </div>
               </li>
             </ul>
           </div>
@@ -57,7 +63,10 @@
           <div class="card-body">
             <ul class="list-unstyled">
               <li *ngFor="let spell of secondLevelSpells">
-                <span>{{spell.name}}</span>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                </div>
               </li>
             </ul>
           </div>
@@ -75,7 +84,10 @@
           <div class="card-body">
             <ul class="list-unstyled">
               <li *ngFor="let spell of thirdLevelSpells">
-                <span>{{spell.name}}</span>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                </div>
               </li>
             </ul>
           </div>
@@ -93,7 +105,10 @@
           <div class="card-body">
             <ul class="list-unstyled">
               <li *ngFor="let spell of fourthLevelSpells">
-                <span>{{spell.name}}</span>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                </div>
               </li>
             </ul>
           </div>
@@ -111,7 +126,10 @@
           <div class="card-body">
             <ul class="list-unstyled">
               <li *ngFor="let spell of fifthLevelSpells">
-                <span>{{spell.name}}</span>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                </div>
               </li>
             </ul>
           </div>
@@ -130,7 +148,10 @@
             <div class="card-body">
               <ul class="list-unstyled">
                 <li *ngFor="let spell of sixthLevelSpells">
-                  <span>{{spell.name}}</span>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -148,7 +169,10 @@
             <div class="card-body">
               <ul class="list-unstyled">
                 <li *ngFor="let spell of seventhLevelSpells">
-                  <span>{{spell.name}}</span>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -166,7 +190,10 @@
             <div class="card-body">
               <ul class="list-unstyled">
                 <li *ngFor="let spell of eighthLevelSpells">
-                  <span>{{spell.name}}</span>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -184,7 +211,10 @@
             <div class="card-body">
               <ul class="list-unstyled">
                 <li *ngFor="let spell of ninthLevelSpells">
-                  <span>{{spell.name}}</span>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
+                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -192,5 +222,9 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="jsonClass" class="w-75">
+    {{jsonClass}}
   </div>
 </div>

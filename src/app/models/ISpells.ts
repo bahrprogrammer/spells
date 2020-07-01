@@ -13,4 +13,5 @@ export interface ISpell {
   components: string;
   duration: string;
   description: string;
+  selected: boolean;
 }
