@@ -27,7 +27,6 @@ export class SpellsComponent implements OnInit {
   onSubmit(): void {
     const index = this.spells.indexOf(this.selectedSpell);
     this.spells.splice(index, 1, this.selectedSpell);
-    console.log(this.spells);
   }
 
   select(spell: ISpell): void {

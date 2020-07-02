@@ -5,7 +5,7 @@ export class CharacterClass {
   name: string;
   description: string;
   fullSpellCaster: boolean;
-  spells: ISpell[];
+  spells: number[];
 
   constructor() {}
 }

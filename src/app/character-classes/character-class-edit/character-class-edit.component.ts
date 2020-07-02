@@ -25,7 +25,7 @@ export class CharacterClassEditComponent implements OnInit {
   eighthLevelSpells: ISpell[] = [];
   ninthLevelSpells: ISpell[] = [];
 
-  jsonClass: string;
+  jsonClass: boolean;
 
   constructor(private route: ActivatedRoute, private service: CharacterClassesService) { }
 
@@ -62,7 +62,7 @@ export class CharacterClassEditComponent implements OnInit {
 
   getClassSpells(): void {
     this.allspells.forEach(s => {
-      if (this.characterClass.spells.find(x => x.id === s.id)){
+      if (this.characterClass.spells.find(x => x === s.id)){
         s.selected = true;
       } else {
         s.selected = false;
@@ -72,59 +72,59 @@ export class CharacterClassEditComponent implements OnInit {
 
   updateCharacterClass(): void {
     this.characterClass.spells = this.getSelectedSpells();
-    this.jsonClass = JSON.stringify(this.characterClass);
+    this.jsonClass = true;// JSON.stringify(this.characterClass);
   }
 
-  getSelectedSpells(): ISpell[] {
-    const selected: ISpell[] = [];
+  getSelectedSpells(): number[] {
+    const selected: number[] = [];
     this.cantrips.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.firstLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.secondLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.thirdLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.fourthLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.fifthLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.sixthLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.seventhLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.eighthLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     this.ninthLevelSpells.forEach(s => {
       if (s.selected) {
-        selected.push(s);
+        selected.push(s.id);
       }
     });
     return selected;

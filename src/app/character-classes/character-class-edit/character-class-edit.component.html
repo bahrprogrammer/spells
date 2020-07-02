@@ -222,9 +222,12 @@
         </div>
       </div>
     </div>
+    <div>
+      <button class="btn btn-small btn-success" (click)="updateCharacterClass()">Update</button>
+    </div>
   </div>
 
-  <div *ngIf="jsonClass" class="w-75">
-    {{jsonClass}}
-  </div>
+  <pre *ngIf="jsonClass" class="w-75">
+    {{characterClass | json}}
+  </pre>
 </div>
