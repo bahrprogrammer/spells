@@ -15,4 +15,9 @@ export class SpellsService {
     const url = 'api/spells';
     return this.http.get<ISpell[]>(url);
   }
+
+  getSpellById(id: string): Observable<ISpell> {
+    const url = `api/spells/${id}`;
+    return this.http.get<ISpell>(url);
+  }
 }

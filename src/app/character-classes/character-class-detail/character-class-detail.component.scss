@@ -1,13 +1,13 @@
 @import '../../../variables.scss';
 
-h3 {
+h1, h3 {
   font-family: 'Milonga', cursive;
 }
 
-button {
+h5, button {
   font-family: 'Milonga', cursive;
   color: $dark;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .card {
@@ -22,4 +22,10 @@ button {
 .card-header {
   background-color: $background-emphasis;
   color: $dark;
+}
+
+.card-footer {
+  background-color: $background-emphasis;
+  color: $dark;
+  font-family: 'Milonga', cursive;
 }

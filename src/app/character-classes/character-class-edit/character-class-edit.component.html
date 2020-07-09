@@ -6,6 +6,10 @@
       </div>
       <div class="card-body" innerHtml="{{characterClass.description}}"></div>
     </div>
+    <div class="float-right">
+      <button class="btn btn-small btn-outline-danger mr-2" [routerLink]="['/characterClasses', characterClass.id]" routerLinkActive="router-link-active">Cancel</button>
+      <button class="btn btn-small btn-outline-success mr-2" (click)="updateCharacterClass()">Update</button>
+    </div>
   </div>
   <div class="w-50">
     <div id="accordion" class="m-2">
@@ -221,9 +225,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <button class="btn btn-small btn-success" (click)="updateCharacterClass()">Update</button>
     </div>
   </div>
 

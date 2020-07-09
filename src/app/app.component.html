@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/characterClasses']">Character classes</a>
+        <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLink]="['/characterClasses']">Character classes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/spells']">Spells</a>
+        <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLink]="['/spells']">Spells</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

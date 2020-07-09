@@ -1,6 +1,6 @@
 <div class="container d-flex mt-2 flex-wrap vw-100">
   <div *ngFor="let cc of characterClasses" class="mb-2 col-12 col-md-4">
-    <div class="card" [routerLink]="['/characterClasses', cc.id, 'edit']" routerLinkActive="router-link-active" >
+    <div class="card" [routerLink]="['/characterClasses', cc.id]" routerLinkActive="router-link-active" >
       <div class="card-header">
         <h4 class="card-title">{{cc.id}}-{{cc.name}}</h4>
       </div>

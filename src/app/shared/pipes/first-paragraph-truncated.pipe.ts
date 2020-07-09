@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'firstParagraphTruncated'
 })
 export class FirstParagraphTruncatedPipe implements PipeTransform {
-  maxLength = 140;
+  maxLength = 130;
 
   transform(value: string): string {
     if (!value.includes('<p')) {
