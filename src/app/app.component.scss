@@ -4,5 +4,21 @@
   background-color: $menu;
 }
 
+.navbar-dark ul li a {
+  color: $light;
+}
 
-// 77567a
+.navbar-brand {
+  color: $light;
+}
+
+.nav btn {
+  color: $light;
+  border-color: $light;
+  border-width: medium;
+}
+
+.btn-outline-primary {
+  color: $light;
+  border-color: $light;
+}
