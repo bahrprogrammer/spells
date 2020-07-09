@@ -1,8 +1,8 @@
 @import '../../variables.scss';
 
 h4 {
-  font-family: Lemon;
-  font-weight: 550;
+  font-family: 'Milonga', cursive;
+  font-weight: 750;
 }
 
 .card {
@@ -12,7 +12,9 @@ h4 {
 .card-body {
   min-height: 11em;
   background-color: #faeed3;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: smaller;
+  font-weight: 700;
   color: $dark;
 }
 
@@ -24,6 +26,7 @@ h4 {
 .card-footer {
   background-color: $background-emphasis;
   color: $dark;
-  font-weight: 500;
+  font-family: 'Milonga', cursive;
+  font-weight: 700;
   min-height: 3em;
 }

@@ -11,20 +11,19 @@
     <div id="accordion" class="m-2">
       <div *ngIf="characterClass.fullSpellCaster" class="card">
         <div class="card-header" id="headingCantrips">
-          <div class="mb-0 text-center">
+          <h5 class="mb-0 text-center">
             <button class="btn btn-link collapsed" data-toggle="collapse"Cantrips data-target="#collapseCantrips" aria-expanded="false" aria-controls="collapseCantrips">
               Cantrips
             </button>
-          </div>
+          </h5>
         </div>
         <div id="collapseCantrips" class="collapse" aria-labelledby="headingCantrips" data-parent="#accordion">
           <div class="card-body">
             <ul class="list-unstyled">
-              <li *ngFor="let spell of cantrips">
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                </div>
+              <li *ngFor="let spell of allClassSpells">
+                <button *ngIf="spell.level === 0" class="btn w-100">
+                  {{spell.name}}
+                </button>
               </li>
             </ul>
           </div>
@@ -41,11 +40,10 @@
         <div id="collapse1st" class="collapse" aria-labelledby="headingFirst" data-parent="#accordion">
           <div class="card-body">
             <ul class="list-unstyled">
-              <li *ngFor="let spell of firstLevelSpells">
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                </div>
+              <li *ngFor="let spell of allClassSpells">
+                <button *ngIf="spell.level === 1" class="btn w-100">
+                  {{spell.name}}
+                </button>
               </li>
             </ul>
           </div>
@@ -62,11 +60,10 @@
         <div id="collapse2nd" class="collapse" aria-labelledby="heading2nd" data-parent="#accordion">
           <div class="card-body">
             <ul class="list-unstyled">
-              <li *ngFor="let spell of secondLevelSpells">
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                </div>
+              <li *ngFor="let spell of allClassSpells">
+                <button *ngIf="spell.level === 2" class="btn w-100">
+                  {{spell.name}}
+                </button>
               </li>
             </ul>
           </div>
@@ -83,11 +80,10 @@
         <div id="collapse3rd" class="collapse" aria-labelledby="heading3rd" data-parent="#accordion">
           <div class="card-body">
             <ul class="list-unstyled">
-              <li *ngFor="let spell of thirdLevelSpells">
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                </div>
+              <li *ngFor="let spell of allClassSpells">
+                <button *ngIf="spell.level === 3" class="btn w-100">
+                  {{spell.name}}
+                </button>
               </li>
             </ul>
           </div>
@@ -104,11 +100,10 @@
         <div id="collapse4th" class="collapse" aria-labelledby="heading4th" data-parent="#accordion">
           <div class="card-body">
             <ul class="list-unstyled">
-              <li *ngFor="let spell of fourthLevelSpells">
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                </div>
+              <li *ngFor="let spell of allClassSpells">
+                <button *ngIf="spell.level === 4" class="btn w-100">
+                  {{spell.name}}
+                </button>
               </li>
             </ul>
           </div>
@@ -125,11 +120,10 @@
         <div id="collapse5th" class="collapse" aria-labelledby="heading5th" data-parent="#accordion">
           <div class="card-body">
             <ul class="list-unstyled">
-              <li *ngFor="let spell of fifthLevelSpells">
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                  <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                </div>
+              <li *ngFor="let spell of allClassSpells">
+                <button *ngIf="spell.level === 5" class="btn w-100">
+                  {{spell.name}}
+                </button>
               </li>
             </ul>
           </div>
@@ -147,11 +141,10 @@
           <div id="collapse6th" class="collapse" aria-labelledby="heading6th" data-parent="#accordion">
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of sixthLevelSpells">
-                  <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                  </div>
+                <li *ngFor="let spell of allClassSpells">
+                  <button *ngIf="spell.level === 6" class="btn w-100">
+                    {{spell.name}}
+                  </button>
                 </li>
               </ul>
             </div>
@@ -168,11 +161,10 @@
           <div id="collapse7th" class="collapse" aria-labelledby="heading7th" data-parent="#accordion">
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of seventhLevelSpells">
-                  <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                  </div>
+                <li *ngFor="let spell of allClassSpells">
+                  <button *ngIf="spell.level === 7" class="btn w-100">
+                    {{spell.name}}
+                  </button>
                 </li>
               </ul>
             </div>
@@ -189,11 +181,10 @@
           <div id="collapse8th" class="collapse" aria-labelledby="heading8th" data-parent="#accordion">
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of eighthLevelSpells">
-                  <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                  </div>
+                <li *ngFor="let spell of allClassSpells">
+                  <button *ngIf="spell.level === 8" class="btn w-100">
+                    {{spell.name}}
+                  </button>
                 </li>
               </ul>
             </div>
@@ -210,11 +201,10 @@
           <div id="collapse9th" class="collapse" aria-labelledby="heading9th" data-parent="#accordion">
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of ninthLevelSpells">
-                  <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" [(ngModel)]="spell.selected" [ngModelOptions]="{standalone: true}" id="{{spell.name}}">
-                    <label class="custom-control-label" for="{{spell.name}}">{{spell.name}}</label>
-                  </div>
+                <li *ngFor="let spell of allClassSpells">
+                  <button *ngIf="spell.level === 0" class="btn w-100">
+                    {{spell.name}}
+                  </button>
                 </li>
               </ul>
             </div>
@@ -222,12 +212,5 @@
         </div>
       </div>
     </div>
-    <div>
-      <button class="btn btn-small btn-success" (click)="updateCharacterClass()">Update</button>
-    </div>
   </div>
-
-  <pre *ngIf="jsonClass" class="w-75">
-    {{characterClass | json}}
-  </pre>
 </div>
