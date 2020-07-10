@@ -1,7 +1,7 @@
 <div *ngIf="spell" class="container">
-  <main class="p-1 p-md-5 m-2">
+  <main class="p-1 p-md-5 mt-3 rounded">
     <div>
-      <h1>{{spell.name}}</h1>
+      <h1 class="text-center mb-3">{{spell.name}}</h1>
       <h6><em>{{display}}</em></h6>
       <h6><strong>Casting Time:</strong> {{spell.castingTime}}</h6>
       <h6><strong>Range:</strong> {{spell.range}}</h6>
@@ -9,7 +9,7 @@
       <h6><strong>Duration:</strong> {{duration}}</h6>
     </div>
     <hr>
-    <div innerHtml="{{spell.description}}"></div>
+    <div id="description" innerHtml="{{spell.description}}"></div>
   </main>
 </div>
 

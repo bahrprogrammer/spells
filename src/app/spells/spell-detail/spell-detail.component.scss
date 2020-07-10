@@ -1,0 +1,26 @@
+@import '../../../variables.scss';
+
+h1, h3 {
+  font-family: 'Milonga', cursive;
+  color: $dark;
+  font-weight: 600;
+}
+
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: $dark;
+}
+
+h6 strong {
+  font-weight: 800;
+}
+
+main {
+  background-color: $background-light;
+  border: 1px $dark solid;
+}
+
+#description {
+  font-family: 'Montserrat', sans-serif;
+  color: $dark;
+}
