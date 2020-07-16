@@ -2,11 +2,24 @@
 
 button {
   background-color: $background;
+  font-family: 'Milonga', cursive;
   font-weight: bold;
   font-size: x-large;
 }
 
 .btn {
-  max-width: 30em;
+  min-width: 20em;
+  max-width: 35em;
   min-height: 5em;
+}
+
+.btn-outline-danger {
+  color: $menu;
+  border-color: $menu;
+}
+
+.btn-outline-danger:hover {
+  color: $background;
+  background-color: $menu;
+  text-decoration: underline;
 }

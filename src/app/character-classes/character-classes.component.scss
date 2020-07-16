@@ -30,3 +30,16 @@ h4 {
   font-weight: 700;
   min-height: 3em;
 }
+
+.card:hover {
+  .card-header, .card-footer {
+    background-color: $menu;
+    color: $background;
+  }
+
+  .card-body {
+    background-color: $background-emphasis;
+    color: $menu;
+  }
+
+}
