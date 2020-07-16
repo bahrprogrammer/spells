@@ -1,6 +1,12 @@
 @import "../../variables.scss";
 
 button {
-  background-color: $background-emphasis;
+  background-color: $background;
   font-weight: bold;
+  font-size: x-large;
+}
+
+.btn {
+  max-width: 30em;
+  min-height: 5em;
 }
