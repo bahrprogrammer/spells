@@ -16,8 +16,18 @@
       </div>
     </div>
     <div class="col-12 col-md-6">
-      <div class="m-2">
-        <div *ngIf="characterClass.fullSpellCaster" class="card mb-1">
+      <div id="filters" class="d-flex flex-row justify-content-between">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" [(ngModel)]="showOnlyRitual" [ngModelOptions]="{standalone: true}" id="ritual" (change)="filterChange()">
+          <label class="custom-control-label" for="ritual">Show only rituals</label>
+        </div>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" [(ngModel)]="showOnlyConcentration" [ngModelOptions]="{standalone: true}" id="concentration" (change)="filterChange()">
+          <label class="custom-control-label" for="concentration">Show only concentration</label>
+        </div>
+      </div>
+      <div class="mt-2">
+        <div *ngIf="characterClass.fullSpellCaster && showCantrips()" class="card mb-1">
           <div class="card-header collapsed" id="headingCantrips" data-toggle="collapse" data-target="#collapseCantrips" aria-expanded="false" aria-controls="collapseCantrips">
             <h5 class="mb-0 text-center">
               Cantrips
@@ -26,7 +36,7 @@
           <div id="collapseCantrips" class="collapse" aria-labelledby="headingCantrips" >
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of allClassSpells">
+                <li *ngFor="let spell of displayedClassSpells">
                   <button *ngIf="spell.level === 0" class="btn w-100" [routerLink]="['/spell', spell.id]" [routerLink]="['/spell', spell.id]">
                     {{spell.name}}
                   </button>
@@ -35,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div class="card mb-1">
+        <div *ngIf="showFirst()" class="card mb-1">
           <div class="card-header collapsed" id="headingFirst" data-toggle="collapse" data-target="#collapse1st" aria-expanded="false" aria-controls="collapse1st">
             <h5 class="mb-0 text-center">
               1st Level
@@ -44,7 +54,7 @@
           <div id="collapse1st" class="collapse" aria-labelledby="headingFirst" >
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of allClassSpells">
+                <li *ngFor="let spell of displayedClassSpells">
                   <button *ngIf="spell.level === 1" class="btn w-100" [routerLink]="['/spell', spell.id]">
                     {{spell.name}}
                   </button>
@@ -53,7 +63,7 @@
             </div>
           </div>
         </div>
-        <div class="card mb-1">
+        <div *ngIf="showSecond()" class="card mb-1">
           <div class="card-header collapsed" id="heading2nd" data-toggle="collapse" data-target="#collapse2nd" aria-expanded="false" aria-controls="collapse2nd">
             <h5 class="mb-0 text-center">
               2nd Level
@@ -62,7 +72,7 @@
           <div id="collapse2nd" class="collapse" aria-labelledby="heading2nd" >
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of allClassSpells">
+                <li *ngFor="let spell of displayedClassSpells">
                   <button *ngIf="spell.level === 2" class="btn w-100" [routerLink]="['/spell', spell.id]">
                     {{spell.name}}
                   </button>
@@ -71,7 +81,7 @@
             </div>
           </div>
         </div>
-        <div class="card mb-1">
+        <div *ngIf="showThird()" class="card mb-1">
           <div class="card-header collapsed" id="heading3rd" data-toggle="collapse" data-target="#collapse3rd" aria-expanded="false" aria-controls="collapse3rd">
             <h5 class="mb-0 text-center">
               3rd Level
@@ -80,7 +90,7 @@
           <div id="collapse3rd" class="collapse" aria-labelledby="heading3rd" >
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of allClassSpells">
+                <li *ngFor="let spell of displayedClassSpells">
                   <button *ngIf="spell.level === 3" class="btn w-100" [routerLink]="['/spell', spell.id]">
                     {{spell.name}}
                   </button>
@@ -89,7 +99,7 @@
             </div>
           </div>
         </div>
-        <div class="card mb-1">
+        <div *ngIf="showFourth()" class="card mb-1">
           <div class="card-header collapsed" id="heading4th" data-toggle="collapse" data-target="#collapse4th" aria-expanded="false" aria-controls="collapse4th">
             <h5 class="mb-0 text-center">
               4th Level
@@ -98,7 +108,7 @@
           <div id="collapse4th" class="collapse" aria-labelledby="heading4th" >
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of allClassSpells">
+                <li *ngFor="let spell of displayedClassSpells">
                   <button *ngIf="spell.level === 4" class="btn w-100" [routerLink]="['/spell', spell.id]">
                     {{spell.name}}
                   </button>
@@ -107,7 +117,7 @@
             </div>
           </div>
         </div>
-        <div class="card mb-1">
+        <div *ngIf="showFifth()" class="card mb-1">
           <div class="card-header collapsed" id="heading5th" data-toggle="collapse" data-target="#collapse5th" aria-expanded="false" aria-controls="collapse5th">
             <h5 class="mb-0 text-center">
               5th Level
@@ -116,7 +126,7 @@
           <div id="collapse5th" class="collapse" aria-labelledby="heading5th" >
             <div class="card-body">
               <ul class="list-unstyled">
-                <li *ngFor="let spell of allClassSpells">
+                <li *ngFor="let spell of displayedClassSpells">
                   <button *ngIf="spell.level === 5" class="btn w-100" [routerLink]="['/spell', spell.id]">
                     {{spell.name}}
                   </button>
@@ -126,7 +136,7 @@
           </div>
         </div>
         <div *ngIf="characterClass.fullSpellCaster">
-          <div class="card mb-1">
+          <div *ngIf="showSixth()" class="card mb-1">
             <div class="card-header collapsed" id="heading6th" data-toggle="collapse" data-target="#collapse6th" aria-expanded="false" aria-controls="collapse6th">
               <h5 class="mb-0 text-center">
                 6th Level
@@ -135,7 +145,7 @@
             <div id="collapse6th" class="collapse" aria-labelledby="heading6th" >
               <div class="card-body">
                 <ul class="list-unstyled">
-                  <li *ngFor="let spell of allClassSpells">
+                  <li *ngFor="let spell of displayedClassSpells">
                     <button *ngIf="spell.level === 6" class="btn w-100" [routerLink]="['/spell', spell.id]">
                       {{spell.name}}
                     </button>
@@ -144,7 +154,7 @@
               </div>
             </div>
           </div>
-          <div class="card mb-1">
+          <div *ngIf="showSeventh()" class="card mb-1">
             <div class="card-header collapsed" id="heading7th" data-toggle="collapse" data-target="#collapse7th" aria-expanded="false" aria-controls="collapse7th">
               <h5 class="mb-0 text-center">
                 7th Level
@@ -153,7 +163,7 @@
             <div id="collapse7th" class="collapse" aria-labelledby="heading7th" >
               <div class="card-body">
                 <ul class="list-unstyled">
-                  <li *ngFor="let spell of allClassSpells">
+                  <li *ngFor="let spell of displayedClassSpells">
                     <button *ngIf="spell.level === 7" class="btn w-100" [routerLink]="['/spell', spell.id]">
                       {{spell.name}}
                     </button>
@@ -162,7 +172,7 @@
               </div>
             </div>
           </div>
-          <div class="card mb-1">
+          <div *ngIf="showEighth()" class="card mb-1">
             <div class="card-header collapsed" id="heading8th" data-toggle="collapse" data-target="#collapse8th" aria-expanded="false" aria-controls="collapse8th">
               <h5 class="mb-0 text-center">
                 8th Level
@@ -171,7 +181,7 @@
             <div id="collapse8th" class="collapse" aria-labelledby="heading8th" >
               <div class="card-body">
                 <ul class="list-unstyled">
-                  <li *ngFor="let spell of allClassSpells">
+                  <li *ngFor="let spell of displayedClassSpells">
                     <button *ngIf="spell.level === 8" class="btn w-100" [routerLink]="['/spell', spell.id]">
                       {{spell.name}}
                     </button>
@@ -180,7 +190,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div *ngIf="showNinth()" class="card">
             <div class="card-header collapsed" id="heading9th" data-toggle="collapse" data-target="#collapse9th" aria-expanded="false" aria-controls="collapse9th">
               <h5 class="mb-0 text-center">
                 9th Level
@@ -189,7 +199,7 @@
             <div id="collapse9th" class="collapse" aria-labelledby="heading9th" >
               <div class="card-body">
                 <ul class="list-unstyled">
-                  <li *ngFor="let spell of allClassSpells">
+                  <li *ngFor="let spell of displayedClassSpells">
                     <button *ngIf="spell.level === 9" class="btn w-100" [routerLink]="['/spell', spell.id]">
                       {{spell.name}}
                     </button>

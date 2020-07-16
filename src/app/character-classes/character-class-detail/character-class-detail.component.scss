@@ -29,3 +29,13 @@ h5, button {
   color: $dark;
   font-family: 'Milonga', cursive;
 }
+
+.custom-control input[type=checkbox] {
+  background-color: $background;
+  border:1px solid $menu;
+}
+
+.custom-control label {
+  color: $background-emphasis
+}
+
