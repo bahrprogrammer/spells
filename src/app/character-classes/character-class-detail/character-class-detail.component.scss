@@ -10,6 +10,10 @@ h5, button {
   font-weight: 600;
 }
 
+header h1 {
+  color: $background-emphasis;
+}
+
 .card {
   border-color: $border;
 }
