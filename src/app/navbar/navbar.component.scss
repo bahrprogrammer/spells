@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.navbar {
+  background-color: $menu;
+}
+
+.navbar-dark ul li a {
+  color: $light;
+}
+
+.navbar-brand {
+  color: $light;
+}
+
+.nav btn {
+  color: $light;
+  border-color: $light;
+  border-width: medium;
+}
+
+.btn-outline-primary {
+  color: $light;
+  border-color: $light;
+}
+
+.dropdown-menu {
+  background-color: $menu;
+  border-color: $light;
+}
+
+.dropdown-item:hover {
+  background-color: $border;
+}
+
+.dropdown-divider {
+  color: $light;
+}
