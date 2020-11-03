@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spell-book"
+    }
+  },
+  "defaultProject": "spell-book",
+  "cli": {
+    "analytics": false
+  }
 }
