@@ -1,5 +1,30 @@
-<div id="spells" class="d-flex vh-100">
-  <div class="flex-wrapper">
+<header id="classHeader" class="w-100 mt-2 text-center">
+  <h1>All Spells</h1>
+  <h3>In alphabetically order</h3>
+</header>
+
+<div class="spell-list">
+
+  <div id="filters" class="d-flex flex-row justify-content-between">
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" [(ngModel)]="showOnlyRitual" [ngModelOptions]="{standalone: true}" id="ritual" (change)="filterChange()">
+      <label class="custom-control-label" for="ritual">Show only rituals</label>
+    </div>
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" [(ngModel)]="showOnlyConcentration" [ngModelOptions]="{standalone: true}" id="concentration" (change)="filterChange()">
+      <label class="custom-control-label" for="concentration">Show only concentration</label>
+    </div>
+  </div>
+
+  <div *ngFor="let spell of displayedSpells">
+    <button class="spell-item btn w-100" [routerLink]="['/spell', spell.id]" [routerLink]="['/spell', spell.id]">
+      {{spell.name}}
+    </button>
+  </div>
+</div>
+
+<!-- <div id="spells" class="d-flex vh-100">
+  <div class="flex-wrapper"> 
     <div class="table table-sm p-3">
       <table class="table table-striped">
         <thead class="sticky-top">
@@ -61,5 +86,5 @@
         <pre>{{spells | json}}</pre>
       </div>
     </div>
-  </div>
-</div>
+  </div> 
+</div> -->

@@ -20,7 +20,7 @@
     "name": "Acid Splash",
     "school": "Conjuration",
     "level": 0,
-    "ritual": true,
+    "ritual": false,
     "concentration": false,
     "castingTime": "1 action",
     "range": "60 feet",

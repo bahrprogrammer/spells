@@ -1,10 +1,30 @@
 @import "../../variables.scss";
 
-  #spells {
-    background-color: $background;
-  }
+header {
+  color: $background-emphasis;
+  font-family: 'Milonga', cursive;
+}
 
-  .flex-wrapper {
-    flex-basis: auto;
-    overflow-y: auto;
-  }
+.spell-list {
+  width: 50%;
+  margin: auto;
+}
+
+.spell-item {
+  background-color: $background-emphasis;
+  font-family: 'Milonga', cursive;
+  color: $dark;
+  font-weight: 600;
+  margin-top: .25rem;
+}
+
+.custom-control input[type=checkbox] {
+  background-color: $background;
+  border:1px solid $menu;
+}
+
+.custom-control label {
+  color: $background-emphasis
+}
+
+
